@@ -1,19 +1,33 @@
+import Header from "../../components/header";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
 
 export default function BlogId({ blog }) {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>投稿日:{blog.publishedAt}</p>
-      <p> {blog.tag && `${blog.tag.tag}`} </p>
-      <div
-        className={styles.post}
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
-    </main>
+    <div>
+      <Header></Header>
+      <main className={styles.main}>
+        <h1 className={styles.title}>{blog.title}</h1>
+        <p className={styles.publishedAt}>
+          投稿日：{new Date(blog.publishedAt).toLocaleDateString()}
+          　最終更新日：
+          {new Date(blog.updatedAt).toLocaleDateString()}
+        </p>
+        <div>
+          {blog.tag.map((tag) => (
+            <span className={styles.tag} key={tag.id}>
+              #{tag.name}
+            </span>
+          ))}
+        </div>
+        <div
+          className={styles.post}
+          dangerouslySetInnerHTML={{
+            __html: `${blog.body}`,
+          }}
+        />
+      </main>
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import Header from "../../components/header";
+import PostBody from "../../components/post-body";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
 
@@ -10,22 +11,15 @@ export default function BlogId({ blog }) {
         <h1 className={styles.title}>{blog.title}</h1>
         <p className={styles.publishedAt}>
           投稿日：{new Date(blog.publishedAt).toLocaleDateString()}
-          　最終更新日：
-          {new Date(blog.updatedAt).toLocaleDateString()}
-        </p>
-        <div>
+          　　最終更新日：
+          {new Date(blog.updatedAt).toLocaleDateString()}　
           {blog.tag.map((tag) => (
             <span className={styles.tag} key={tag.id}>
               #{tag.name}
             </span>
           ))}
-        </div>
-        <div
-          className={styles.post}
-          dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
-          }}
-        />
+        </p>
+        <PostBody content={blog.body}/>
       </main>
     </div>
   );

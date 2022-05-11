@@ -1,25 +1,23 @@
 import styles from "../styles/Home.module.scss";
 import { client } from "../libs/client";
 import Link from "next/link";
-import Header from "../components/header";
+import Layout from "../components/layout";
+import Head from "next/head";
+import { CMS_NAME } from "../libs/constants";
+import Intro from "../components/intro";
+import MoreStroies from "../components/more-stories";
 
 export default function Home({ blog }) {
   return (
-    <div>
-      <Header></Header>
-      <main className={styles.main}>
-        <ul>
-          {blog.map((blog) => (
-            <li key={blog.id}>
-              {new Date(blog.createdAt).toLocaleDateString()}　
-              <Link href={`/blog/${blog.id}`}>
-                <a>{blog.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
+    <>
+      <Layout>
+        <Head>Next.js と {CMS_NAME} で作られたブログです。</Head>
+        <main className={styles.main}>
+          <Intro />
+          {blog.length > 0 && <MoreStroies posts={blog} />}
+        </main>
+      </Layout>
+    </>
   );
 }
 

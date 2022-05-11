@@ -1,27 +1,33 @@
 import Header from "../../components/header";
+import Layout from "../../components/layout";
 import PostBody from "../../components/post-body";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
+import Head from "next/head";
+import PostHeader from "../../components/post-header";
 
 export default function BlogId({ blog }) {
   return (
-    <div>
-      <Header></Header>
+    <Layout>
       <main className={styles.main}>
-        <h1 className={styles.title}>{blog.title}</h1>
-        <p className={styles.publishedAt}>
-          投稿日：{new Date(blog.publishedAt).toLocaleDateString()}
-          　　最終更新日：
-          {new Date(blog.updatedAt).toLocaleDateString()}　
-          {blog.tag.map((tag) => (
-            <span className={styles.tag} key={tag.id}>
-              #{tag.name}
-            </span>
-          ))}
-        </p>
-        <PostBody content={blog.body}/>
+        <Header />
+        <>
+          <article>
+            <Head>
+              <title>{blog.title} | 記事名</title>
+            </Head>
+            <PostHeader
+              title={blog.title}
+              publishedAt={blog.publishedAt}
+              updatedAt={blog.updatedAt}
+              author="Escaity"
+              tags={blog.tag}
+            />
+            <PostBody content={blog.body} />
+          </article>
+        </>
       </main>
-    </div>
+    </Layout>
   );
 }
 

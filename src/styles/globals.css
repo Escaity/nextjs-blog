@@ -1,9 +1,9 @@
 html,
 body {
-  width: 1300px;
+  width: 1200px;
   padding: 0;
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -14,4 +14,24 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: light) {
+  /* light-mode(ブラウザ設定) */
+  body {
+    background-color: #ffe; /* 暖色よりの白 */
+    color: #112;            /* 青みがかった黒 */
+  }
+}
+@media (prefers-color-scheme: dark) {
+  /* dark-mode(ブラウザ設定) */
+  body {
+    background-color: #112; /* 青みがかった黒 */
+    color: #eef;            /* 青みが薄い白 */
+  }
+  h1,
+  a:link,
+  a:visited {
+      color: #fff;
+  }
 }

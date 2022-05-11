@@ -3,16 +3,52 @@
   margin: 0 auto;
 }
 
+.layout {
+  min-height: 100vh;
+}
+
+.author {
+  text-align: right;
+}
+
 .title {
   margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.introSection {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.introTitle {
+  font-weight: bold;
+  display: inline-block;
+  font-size: 48px;
+  color: #ff70e2;
+}
+
+.introSubTitle {
+  display: inline-block;
+  margin-top: 72px;
+}
+
+.previewForm {
+  border: 1px solid #2e6969;
+  padding-top: 10px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 2px;
 }
 
 .tag {
   margin-right: 10px;
   padding: 5px;
-  border: 1px solid black;
   border-radius: 10px;
-  background-color: aqua;
+  background-color: #272757;
+  color: #eee;
 }
 
 .publishedAt {
@@ -42,3 +78,6 @@
   }
 }
 
+.footer {
+  text-align: right;
+}

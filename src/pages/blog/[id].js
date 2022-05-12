@@ -5,8 +5,15 @@ import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import PostHeader from "../../components/post-header";
+import Prism from "prismjs";
+import { useEffect } from "react";
 
 export default function BlogId({ blog }) {
+  // Prismのシンタックスハイライトを適用する
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+  //console.log(blog.body);
   return (
     <Layout>
       <main className={styles.main}>

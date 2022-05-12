@@ -5,13 +5,7 @@ import { CMS_NAME } from "../libs/constants";
 export default function Meta() {
   return (
     <Head>
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/public/chabo32.png"
-      />
-      <link rel="shortcut icon" href="/public/favicons/favicon.ico" />
+      <link rel="shortcut icon" href="/favicons/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta
         name="description"

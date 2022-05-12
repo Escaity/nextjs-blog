@@ -11,7 +11,10 @@ export default function Home({ blog }) {
   return (
     <>
       <Layout>
-        <Head>Next.js と {CMS_NAME} で作られたブログです。</Head>
+        <Head>
+          <title>escalib.</title>
+          Next.js と {CMS_NAME} で作られたブログです。
+        </Head>
         <main className={styles.main}>
           <Intro />
           {blog.length > 0 && <MoreStroies posts={blog} />}

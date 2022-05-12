@@ -76,6 +76,10 @@
     list-style-type: decimal;
     list-style-position: inside;
   }
+
+  & > p {
+    line-height: 1.7;
+  }
 }
 
 .footer {

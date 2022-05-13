@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss";
 export default function PostBody({ content }) {
   function createMrkup() {
     return {
-      __html: content.map((blog) => blog.field).join(" "),
+      __html: content.map((blog) => Object.values(blog)[1]).join(" "),
     };
   }
 

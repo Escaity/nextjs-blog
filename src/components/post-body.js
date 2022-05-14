@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.scss";
 
 export default function PostBody({ content }) {
-  function createMrkup() {
+  function createMarkup() {
     return {
       __html: content.map((blog) => Object.values(blog)[1]).join(" "),
     };
@@ -9,7 +9,7 @@ export default function PostBody({ content }) {
 
   return (
     <>
-      <div className={styles.post} dangerouslySetInnerHTML={createMrkup()} />
+      <div className={styles.post} dangerouslySetInnerHTML={createMarkup()} />
     </>
   );
 }

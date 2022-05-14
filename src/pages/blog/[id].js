@@ -13,7 +13,7 @@ export default function BlogId({ blog }) {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
-  //console.log(blog.body);
+
   return (
     <Layout>
       <main className={styles.main}>
@@ -21,7 +21,7 @@ export default function BlogId({ blog }) {
         <>
           <article>
             <Head>
-              <title>{blog.title} | 記事名</title>
+              <title>{blog.title}</title>
             </Head>
             <PostHeader
               title={blog.title}

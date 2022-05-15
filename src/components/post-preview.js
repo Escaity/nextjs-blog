@@ -5,14 +5,12 @@ import styles from "../styles/Home.module.scss";
 export default function PostPreview({ id, title, createdAt }) {
   return (
     <div className={styles.previewForm}>
-      <div>{new Date(createdAt).toLocaleDateString()}</div>
-      <div>
-        <h3>
-          <Link href={`/blog/${id}`}>
-            <a>{title}</a>
-          </Link>
-        </h3>
-      </div>
+      <Link href={`/blog/${id}`}>
+        <div>
+          <div>{new Date(createdAt).toLocaleDateString()}</div>
+          <h3>{title}</h3>
+        </div>
+      </Link>
     </div>
   );
 }

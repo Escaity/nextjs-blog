@@ -1,6 +1,5 @@
 import styles from "../styles/Home.module.scss";
 import { client } from "../libs/client";
-import Link from "next/link";
 import Layout from "../components/layout";
 import Head from "next/head";
 import { CMS_NAME, ENTRY_PER_PAGE } from "../libs/constants";

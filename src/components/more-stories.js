@@ -1,9 +1,9 @@
 import PostPreview from "./post-preview";
-
+import styles from "../styles/Home.module.scss"
 // 記事一覧表示用
 export default function MoreStroies({ posts }) {
   return (
-    <section>
+    <section className={styles.postList}>
       <h2>記事一覧</h2>
       <div>
         {posts.map((blog) => (

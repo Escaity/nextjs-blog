@@ -6,7 +6,6 @@ export const CurrentPage = ({ current }) => {
   const router = useRouter();
   const currentPath = `/blog/page/${current}`;
   let id = Object.values(router.query)[0];
-  console.log(id);
   return (
     <Link href={currentPath}>
       <a

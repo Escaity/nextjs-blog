@@ -21,11 +21,12 @@ export default function TagId({ blog, tags }) {
         </Head>
         <main className={styles.main}>
           <Intro />
-          <h2>
+          <h3>
+            <Link href={"/"}>記事一覧</Link>
             {blog.length > 0 && router.query["id"] === blog[0].tag[0].id
-              ? `記事一覧 > ${blog[0].tag[0].name}`
+              ? ` > ${blog[0].tag[0].name}`
               : "コンテンツがありません。"}
-          </h2>
+          </h3>
           {blog.length > 0 && <MoreStroies posts={blog} />}
         </main>
       </Layout>

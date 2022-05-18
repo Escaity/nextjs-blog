@@ -7,9 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      <div className={styles.layout}>
-        <main>{children}</main>
-      </div>
+      <div className={styles.layout}>{children}</div>
       <Footer></Footer>
     </>
   );

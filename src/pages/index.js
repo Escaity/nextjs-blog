@@ -7,30 +7,25 @@ import Intro from "../components/intro";
 import MoreStroies from "../components/more-stories";
 import { Pagination } from "../components/pagination";
 import Link from "next/link";
+import { TagList } from "../components/tagList";
 
 export default function Home({ blog, totalCount, tags }) {
   return (
     <>
+      <Intro />
       <Layout>
         <Head>
           <title>escalib.</title>
           Next.js と {CMS_NAME} で作られたブログです。
         </Head>
         <main className={styles.main}>
-          <Intro />
-          <ul>
-            {tags.map((tag) => (
-              <li key={tag.id}>
-                <Link href={`/tag/${tag.id}`}>
-                  <a>{tag.name}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
           <h2>記事一覧</h2>
           {blog.length > 0 && <MoreStroies posts={blog} />}
           <Pagination totalCount={totalCount} />
         </main>
+        <aside className={styles.aside}>
+          <TagList tags={tags} />
+        </aside>
       </Layout>
     </>
   );

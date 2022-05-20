@@ -6,7 +6,7 @@ import { TagsPreview } from "./tags-preview";
 export default function PostPreview({ id, title, tags, createdAt }) {
   return (
     <div className={styles.previewForm}>
-      <div>
+      <div className={styles.infos}>
         <span>{new Date(createdAt).toLocaleDateString()} </span>
         <TagsPreview tags={tags} />
         <Link href={`/blog/${id}`}>
